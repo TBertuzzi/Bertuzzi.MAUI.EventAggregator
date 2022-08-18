@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIEventAggregatorSample.MessagePage"
+             Title="MessagePage">
+    
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="EventAggregator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Write a message" FontSize="Title" Padding="{StaticResource SamplePadding}"/>
+        <Entry Text="{Binding Text}" FontSize="16" Margin="30,0,30,0"/>
+        <Button Text="Back" Command="{Binding SendTextCommand}"></Button>
+
+    </StackLayout>
+    
+</ContentPage>
