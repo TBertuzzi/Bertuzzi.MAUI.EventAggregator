@@ -58,3 +58,7 @@ EventAggregator.Instance.SendMessage(TextMessage);
 
 
 The complete example can be downloaded here: <https://github.com/TBertuzzi/Bertuzzi.MAUI.EventAggregator/tree/master/MAUIEventAggregatorSample>
+
+BaseViewModel and Commands used of : https://github.com/jamesmontemagno/mvvm-helpers/tree/master/MvvmHelpers
+
+Based on my package : https://github.com/TBertuzzi/Xamarin.Forms.EventAggregator
