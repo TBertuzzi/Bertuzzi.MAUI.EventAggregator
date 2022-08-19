@@ -17,9 +17,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<PackageIcon>icone.png</PackageIcon>
 
-		<Company>Bertuzzi</Company>
+		<Company>tbertuzzi</Company>
 		<Authors>tbertuzzi</Authors>
-		<Copyright>Copyright ©2021 Bertuzzi</Copyright>
+		<Copyright>Copyright ©2021 tbertuzzi</Copyright>
 		<PackageProjectUrl>https://github.com/TBertuzzi/Bertuzzi.MAUI.EventAggregator</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/TBertuzzi/Bertuzzi.MAUI.EventAggregator</RepositoryUrl>
 		<Description>EventAggregator for MAUI</Description>

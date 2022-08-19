@@ -1,4 +1,5 @@
-﻿using MAUIEventAggregatorSample.Events;
+﻿using Bertuzzi.MAUI.EventAggregator;
+using MAUIEventAggregatorSample.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace MAUIEventAggregatorSample.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public MvvmHelpers.Commands.Command TextViewCommand { get; }
+        public Commands.Command TextViewCommand { get; }
 
         string _text;
         public string Text
@@ -32,7 +33,7 @@ namespace MAUIEventAggregatorSample.ViewModels
             EventAggregator.Instance.RegisterHandler<TextMessage>(
        TextHandler);
 
-            TextViewCommand = new MvvmHelpers.Commands.Command(async () => await SendTextViewCommandExecute());
+            TextViewCommand = new Commands.Command(async () => await SendTextViewCommandExecute());
         }
 
 
@@ -46,7 +47,7 @@ namespace MAUIEventAggregatorSample.ViewModels
 
         private async Task SendTextViewCommandExecute()
         {
-            await Xamarin.Forms.Application.Current.
+            await Application.Current.
             MainPage.Navigation.PushAsync(new MessagePage());
         }
     }

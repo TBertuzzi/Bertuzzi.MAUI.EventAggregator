@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bertuzzi.MAUI.EventAggregator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace MAUIEventAggregatorSample.ViewModels
 {
     public class MessageViewModel : BaseViewModel
     {
-        public MvvmHelpers.Commands.Command SendTextCommand { get; }
+        public Commands.Command SendTextCommand { get; }
         string _text;
         public string Text
         {
@@ -26,14 +27,14 @@ namespace MAUIEventAggregatorSample.ViewModels
         {
             _text = string.Empty;
 
-            SendTextCommand = new MvvmHelpers.Commands.Command(async () => await SendTextCommandExecute());
+            SendTextCommand = new Commands.Command(async () => await SendTextCommandExecute());
         }
 
 
         private async Task SendTextCommandExecute()
         {
 
-            var TextMessage = new TextMessage
+            var TextMessage = new MAUIEventAggregatorSample.Events.TextMessage
             {
                 Text = Text
             };
@@ -41,7 +42,7 @@ namespace MAUIEventAggregatorSample.ViewModels
             //Send Message
             EventAggregator.Instance.SendMessage(TextMessage);
 
-            await Xamarin.Forms.Application.Current.MainPage.Navigation.PopAsync();
+            await Application.Current.MainPage.Navigation.PopAsync();
 
         }
     }
